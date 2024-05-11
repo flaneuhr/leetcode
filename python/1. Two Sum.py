@@ -8,7 +8,7 @@ class Solution(object):
         memo = {}
         for i in range(len(nums)):
             need = target - nums[i]
-            if need in memo:
+            if memo.get(need, -1) != -1:
                 return [i, memo[need]]
             else: 
                 memo[nums[i]] = i
